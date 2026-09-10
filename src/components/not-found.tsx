@@ -1,8 +1,16 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { useI18n } from "@/lib/i18n";
+import { I18nProvider, useI18n } from "@/lib/i18n";
 
 export function NotFoundPage() {
+  return (
+    <I18nProvider>
+      <NotFoundContent />
+    </I18nProvider>
+  );
+}
+
+function NotFoundContent() {
   const { t } = useI18n();
   return (
     <section className="min-h-[80svh] grid place-items-center px-6 pt-32 pb-20">
